@@ -957,3 +957,31 @@ Processing by ArtistsController#index as HTML
   [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
   Rendered artists/index.html.erb within layouts/application (5.5ms)
 Completed 200 OK in 194ms (Views: 189.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists" for 68.42.76.249 at 2018-07-24 21:56:49 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/1/songs" for 68.42.76.249 at 2018-07-24 21:56:54 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered songs/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 50ms (Views: 18.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists/1" for 68.42.76.249 at 2018-07-24 21:57:14 +0000
+Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
