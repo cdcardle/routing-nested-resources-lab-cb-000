@@ -5,7 +5,7 @@ class SongsController < ApplicationController
       if @songs.valid?
         render 'index'
       else
-        redirect 'artists/index'
+        redirect 'artists'
       end
     else
       @songs = Song.all
