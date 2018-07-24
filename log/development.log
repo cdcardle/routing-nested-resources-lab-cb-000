@@ -792,3 +792,13 @@ Cannot render console from 68.42.76.249! Allowed networks: 127.0.0.1, ::1, 127.0
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("artist_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["artist_id", 4], ["title", "Monkey Gone to Heaven"], ["created_at", "2018-07-24 21:09:48.164238"], ["updated_at", "2018-07-24 21:09:48.164238"]]
   [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" DESC LIMIT 1
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" DESC LIMIT 1
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "songs" SET "id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["id", 8], ["updated_at", "2018-07-24 21:10:19.516629"], ["id", 17]]
+  [1m[35m (2.4ms)[0m  commit transaction
