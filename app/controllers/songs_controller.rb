@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
-      @songs = Artist.find(params[:artist_id]).songs
-      if @songs.valid?
-        render 'index'
+      artist = Artist.find(params[:artist_id])
+      if artist.valid?
+        @songs = artist.songs
       else
         redirect 'artists'
       end
