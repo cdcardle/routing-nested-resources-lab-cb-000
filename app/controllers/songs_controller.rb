@@ -4,7 +4,7 @@ class SongsController < ApplicationController
       begin
         artist = Artist.find(params[:artist_id])
       rescue
-        flash[message:] = "Artist Not Found"
+        flash[:message] = "Artist Not Found"
         redirect_to '/artists'
         return
       end
