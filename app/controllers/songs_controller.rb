@@ -4,10 +4,11 @@ class SongsController < ApplicationController
       begin
         artist = Artist.find(params[:artist_id])
       rescue
-        @songs = artist.songs
-      else
+        flash[message:] = "Artist Not Found"
         redirect_to '/artists'
+        return
       end
+      @songs = artist.songs
     else
       @songs = Song.all
     end
