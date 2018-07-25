@@ -4,7 +4,7 @@ class SongsController < ApplicationController
       begin
         artist = Artist.find(params[:artist_id])
       rescue
-        flash[:message] = "Artist not found!"
+        flash[:alert] = "Artist not found!"
         redirect_to '/artists'
         return
       end
@@ -18,7 +18,7 @@ class SongsController < ApplicationController
     begin
       song = Song.find(params[:id])
     rescue
-      flash[:message] = "Song not found!"
+      flash[:alert] = "Song not found!"
     end
     @song = song
   end
